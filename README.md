@@ -49,7 +49,7 @@ Process{name='date', command='date', alive=true}
 >
 Copy
 exit: Exits Compost. For example, exit will print a farewell message and terminate the program.
-# Examples
+# Linux Examples
 Here are some examples of how to use Compost:
 
 To run Compost, compile and run the Compost.java file. You should see something like this:
@@ -91,3 +91,37 @@ Copy
 To exit Compost, type exit. You should see something like this:
 > exit
 Exiting Compost. Goodbye!
+>
+# windows examples
+To create a new process that prints the current date and time every second, type create date cmd /c "for /l %x in (0,0,0) do @echo %date% %time%". You should see something like this:
+> create date cmd /c "for /l %x in (0,0,0) do @echo %date% %time%"
+Created process date with command cmd /c "for /l %x in (0,0,0) do @echo %date% %time%"
+date: Sun 05/21/2023 15:47:37.00
+date: Sun 05/21/2023 15:47:38.00
+date: Sun 05/21/2023 15:47:39.00
+>
+Copy
+To create another process that prints a random number every second, type create random cmd /c "for /l %x in (0,0,0) do @set /a num=%random% %% 100 + 1 & echo %num%". You should see something like this:
+> create random cmd /c "for /l %x in (0,0,0) do @set /a num=%random% %% 100 + 1 & echo %num%"
+Created process random with command cmd /c "for /l %x in (0,0,0) do @set /a num=%random% %% 100 + 1 & echo %num%"
+random: 42
+random: 17
+random: 76
+>
+Copy
+To list all the processes running in Compost, type list. You should see something like this:
+> list
+Processes running in Compost:
+Process{name='date', command='cmd /c "for /l %x in (0,0,0) do @echo %date% %time%"', alive=true}
+Process{name='random', command='cmd /c "for /l %x in (0,0,0) do @set /a num=%random% %% 100 + 1 & echo %num%"', alive=true}
+>
+Copy
+To kill the process that prints the current date and time, type kill date. You should see something like this:
+> kill date
+Killed process date
+>
+Copy
+To exit Compost, type exit. You should see something like this:
+> exit
+Exiting Compost. Goodbye!
+>
