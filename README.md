@@ -1,5 +1,5 @@
 # compost.java
-Compost
+# Compost
 Compost is a simple operating environment in Java that allows users to create, kill, and list processes that execute commands. Compost consists of two classes: Compost and Process.
 
 Compost class
@@ -43,12 +43,13 @@ The user can interact with Compost by typing commands in the console. The availa
 create <name> <command>: Creates a new process with the given name and command. For example, create hello echo Hello World will create a process named hello that executes the echo command with Hello World as an argument.
 kill <name>: Kills a process by name. For example, kill hello will kill the process named hello if it exists.
 list: Lists all the processes running in Compost. For example, list will print something like this:
-Processes running in Compost:
+> Processes running in Compost:
 Process{name='hello', command='echo Hello World', alive=true}
 Process{name='date', command='date', alive=true}
+>
 Copy
 exit: Exits Compost. For example, exit will print a farewell message and terminate the program.
-Examples
+# Examples
 Here are some examples of how to use Compost:
 
 To run Compost, compile and run the Compost.java file. You should see something like this:
